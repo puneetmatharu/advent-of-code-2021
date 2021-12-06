@@ -14,4 +14,4 @@ Contains solutions to the puzzles presented [here](https://adventofcode.com/2021
 
 ## Day 3+
 
-You'll just have to guess the question. I'm too lazy to describe it.
+Too lazy to describe the rest -- this step is "left to the reader".
