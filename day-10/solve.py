@@ -79,10 +79,12 @@ def main() -> int:
     assert solve_pt1(example_report) == example_answer1
     assert solve_pt2(example_report) == example_answer2
 
-    test_report = load_report(TEST_DATA_PATH)
-    print(f"Number of entries in report: {len(test_report)}")
-    print(f"Answer to Part 1: {solve_pt1(test_report)}")
-    print(f"Answer to Part 2: {solve_pt2(test_report)}")
+    have_test_data = False
+    if have_test_data:
+        test_report = load_report(TEST_DATA_PATH)
+        print(f"Number of entries in report: {len(test_report)}")
+        print(f"Answer to Part 1: {solve_pt1(test_report)}")
+        print(f"Answer to Part 2: {solve_pt2(test_report)}")
 
 
 if __name__ == "__main__":
