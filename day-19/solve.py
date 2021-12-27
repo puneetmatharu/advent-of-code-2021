@@ -21,7 +21,7 @@ class Scanner:
     def update_backups(self) -> None:
         self._backup = self.point_cloud.copy()
 
-    def transform(self, f: np.ndarray) -> None:
+    def transform(self, f: Callable) -> None:
         self.point_cloud = np.apply_along_axis(f, -1, self.point_cloud)
 
     def translate(self, shift: np.ndarray) -> None:
@@ -33,7 +33,7 @@ class Scanner:
         for p in self.point_cloud:
             yield p
 
-    def update_positions(self, transform: int, shift: np.ndarray) -> None:
+    def update_positions(self, transform: Callable, shift: np.ndarray) -> None:
         self.position += shift
         self.transform(transform)
         self.translate(shift)
@@ -208,7 +208,7 @@ def main() -> int:
         answer2 = solve_pt2(reoriented_scanners)
         print(f"Answer to Part 1: {answer1}")
         print(f"Answer to Part 2: {answer2}")
-        assert answer2 == solution1
+        assert answer1 == solution1
         assert answer2 == solution2
 
 
